@@ -1,3 +1,4 @@
+#!/bin/bash
 
 calculate_volume() {
     local height=$1
@@ -9,12 +10,12 @@ calculate_volume() {
         return 1
     fi
 
-    if ! [[ "$height" =~ ^[0-9]+([.][0-9]+)?$ && "$width" =~ ^[0-9]+([.][0-9]+)?$ && "$length" =~ ^[0-9]+([.][0-9]+)?$ ]]; then
-        echo "Error: All arguments must be positive numbers"
+    if ! [[ "$height" =~ ^[0-9]+$ && "$width" =~ ^[0-9]+$ && "$length" =~ ^[0-9]+$ ]]; then
+        echo "Error: All arguments must be positive whole numbers"
         return 1
     fi
 
-    volume=$(echo "$height * $width * $length" | bc)
+    volume=$((height * width * length))
     echo "$volume"
 }
 
