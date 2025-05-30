@@ -11,7 +11,7 @@ calculate_volume() {
     fi
 
     if ! [[ "$height" =~ ^[0-9]+$ && "$width" =~ ^[0-9]+$ && "$length" =~ ^[0-9]+$ ]]; then
-        echo "Error: All arguments must be positive whole numbers"
+        echo "Error: All arguments must be positive numbers"
         return 1
     fi
 
